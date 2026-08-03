@@ -14,7 +14,6 @@ export const site = {
     github: "https://github.com/davidd817",
     orcid: "https://orcid.org/0009-0003-0396-1077",
     webOfScience: "https://www.webofscience.com/wos/author/record/LFF-9560-2024",
-    googleSitesArchive: "https://sites.google.com/view/davidlopezdiego"
   }
 };
 
