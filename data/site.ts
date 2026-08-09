@@ -18,12 +18,12 @@ export const site = {
 };
 
 export const navigation = [
-  { label: "Profile", href: "#profile" },
-  { label: "Expertise", href: "#expertise" },
-  { label: "Selected Work", href: "#work" },
-  { label: "Experience", href: "#experience" },
-  { label: "Publications", href: "#publications" },
-  { label: "Contact", href: "#contact" }
+  { label: "Profile", href: "/#profile" },
+  { label: "Expertise", href: "/#expertise" },
+  { label: "Selected Work", href: "/#selected-work" },
+  { label: "Experience", href: "/#experience" },
+  { label: "Publications", href: "/#publications" },
+  { label: "Contact", href: "/#contact" }
 ];
 
 export const metrics = [

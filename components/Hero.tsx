@@ -19,7 +19,7 @@ export function Hero() {
           <p className="mt-5 text-xl font-medium text-cyan-100 md:text-2xl">{site.subtitle}</p>
           <p className="mt-8 max-w-3xl text-pretty text-lg leading-9 text-slate-300 md:text-xl">{site.description}</p>
           <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-            <a href="#work" className="rounded-full bg-cyan-300 px-6 py-3 text-center text-sm font-bold text-slate-950 shadow-glow transition hover:-translate-y-0.5 hover:bg-cyan-200">
+            <a href="#selected-work" className="rounded-full bg-cyan-300 px-6 py-3 text-center text-sm font-bold text-slate-950 shadow-glow transition hover:-translate-y-0.5 hover:bg-cyan-200">
               View selected work
             </a>
             <a href={site.cv} className="rounded-full border border-white/15 bg-white/5 px-6 py-3 text-center text-sm font-bold text-white transition hover:-translate-y-0.5 hover:border-cyan-200/60 hover:bg-white/10">

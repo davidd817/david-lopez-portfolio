@@ -46,6 +46,12 @@ export type WorkSubsection = {
   callout?: string;
 };
 
+export type WorkProcessStep = {
+  title: string;
+  description: string;
+  evidence?: string;
+};
+
 export type WorkSection = {
   id: string;
   title: string;
@@ -54,7 +60,7 @@ export type WorkSection = {
   bullets?: string[];
   subsections?: WorkSubsection[];
   callout?: string;
-  process?: string[];
+  process?: (string | WorkProcessStep)[];
   figures?: WorkAsset[];
   metrics?: WorkMetric[];
   skills?: WorkSkillGroup[];
@@ -83,6 +89,8 @@ export type WorkProject = {
   nav: { id: string; label: string }[];
   hero?: WorkAsset;
   sections: WorkSection[];
+  heroLinks?: WorkLink[];
+  profileLinks?: WorkLink[];
   links?: WorkLink[];
   seo: { title: string; description: string; ogDescription: string };
 };

@@ -5,7 +5,7 @@ import { SectionHeader } from "./SectionHeader";
 
 export function SelectedWork() {
   return (
-    <section id="work" className="bg-slate-950 px-5 py-20 md:px-8 md:py-28">
+    <section id="selected-work" className="bg-slate-950 px-5 py-20 md:px-8 md:py-28">
       <div className="mx-auto max-w-7xl">
         <SectionHeader
           eyebrow="Selected Work"

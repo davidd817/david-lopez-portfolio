@@ -12,6 +12,7 @@ export const workBySlug = new Map(workProjects.map((project) => [project.slug, p
 
 export const legacyWorkRedirects: Record<string, string> = {
   "afm-force-curve-analysis": "afm-nanomechanics-extremotolerant-bacteria",
+  "afm-based-nanomechanical-characterization-living-extremophile-bacteria": "afm-nanomechanics-extremotolerant-bacteria",
   "materials-characterization-rd": "advanced-materials-characterisation",
   "thermoelectric-materials": "thermoelectric-materials-metrology",
   "mixed-matrix-membranes": "mixed-matrix-membranes-gas-separation",
