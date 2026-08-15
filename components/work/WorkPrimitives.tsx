@@ -13,7 +13,8 @@ export function CaseStudyHero({
   subheadline,
   opening,
   hero,
-  actions
+  actions,
+  heroFullWidth = false
 }: {
   category: string;
   tier: string;
@@ -22,23 +23,21 @@ export function CaseStudyHero({
   opening: string[];
   hero?: WorkAsset;
   actions?: WorkLink[];
+  heroFullWidth?: boolean;
 }) {
-  return (
-    <section className="relative overflow-hidden border-b border-white/10 bg-[radial-gradient(circle_at_top_left,_rgba(34,211,238,0.18),transparent_30%),linear-gradient(135deg,#020617_0%,#0f172a_100%)] px-5 py-20 md:px-8 md:py-28">
-      <div className="absolute inset-0 bg-grid opacity-20" aria-hidden="true" />
-      <div className="relative mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
-        <div>
-          <Link href="/#selected-work" className="mb-8 inline-flex rounded-full border border-white/15 px-4 py-2 text-sm font-semibold text-slate-200 transition hover:border-cyan-300/50 hover:text-cyan-100 focus:outline-none focus:ring-2 focus:ring-cyan-300/70">← Back to selected work</Link>
-          <div className="mb-5 flex flex-wrap gap-3"><Badge>{category}</Badge><Badge variant="soft">{tier} work</Badge></div>
-          <h1 className="max-w-4xl text-balance text-4xl font-semibold tracking-tight text-white md:text-6xl">{title}</h1>
-          <p className="mt-5 max-w-3xl text-xl font-medium leading-9 text-cyan-100">{subheadline}</p>
-          <div className="mt-8 max-w-3xl space-y-4 text-lg leading-9 text-slate-300">{opening.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}</div>
-          {actions?.length ? <div className="mt-8"><ExternalLinkGroup links={actions} /></div> : null}
-        </div>
-        {hero ? <FigureBlock asset={hero} eager /> : null}
-      </div>
-    </section>
-  );
+  const content = <div>
+    <Link href="/#selected-work" className="mb-8 inline-flex rounded-full border border-white/15 px-4 py-2 text-sm font-semibold text-slate-200 transition hover:border-cyan-300/50 hover:text-cyan-100 focus:outline-none focus:ring-2 focus:ring-cyan-300/70">← Back to selected work</Link>
+    <div className="mb-5 flex flex-wrap gap-3"><Badge>{category}</Badge><Badge variant="soft">{tier} work</Badge></div>
+    <h1 className="max-w-4xl text-balance text-4xl font-semibold tracking-tight text-white md:text-6xl">{title}</h1>
+    <p className="mt-5 max-w-3xl text-xl font-medium leading-9 text-cyan-100">{subheadline}</p>
+    <div className="mt-8 max-w-3xl space-y-4 text-lg leading-9 text-slate-300">{opening.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}</div>
+    {actions?.length ? <div className="mt-8"><ExternalLinkGroup links={actions} /></div> : null}
+  </div>;
+
+  return <section className="relative overflow-hidden border-b border-white/10 bg-[radial-gradient(circle_at_top_left,_rgba(34,211,238,0.18),transparent_30%),linear-gradient(135deg,#020617_0%,#0f172a_100%)] px-5 py-20 md:px-8 md:py-28">
+    <div className="absolute inset-0 bg-grid opacity-20" aria-hidden="true" />
+    {heroFullWidth ? <div className="relative mx-auto max-w-7xl">{content}{hero ? <div className="mt-10"><FigureBlock asset={hero} eager /></div> : null}</div> : <div className="relative mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">{content}{hero ? <FigureBlock asset={hero} eager /> : null}</div>}
+  </section>;
 }
 
 export function ProjectSnapshot({ items }: { items: { label: string; value: string }[] }) {
@@ -80,26 +79,47 @@ export function CaseStudyNav({ items }: { items: { id: string; label: string }[]
 export function FigureBlock({ asset, eager = false }: { asset: WorkAsset; eager?: boolean }) {
   const [open, setOpen] = useState(false);
   const triggerRef = useRef<HTMLButtonElement>(null);
+  const closeRef = useRef<HTMLButtonElement>(null);
+  const wasOpenRef = useRef(false);
+
   useEffect(() => {
-    if (!open) { triggerRef.current?.focus(); return; }
+    if (open && !wasOpenRef.current) {
+      wasOpenRef.current = true;
+      const frame = window.requestAnimationFrame(() => closeRef.current?.focus());
+      return () => window.cancelAnimationFrame(frame);
+    }
+    if (!open && wasOpenRef.current) {
+      wasOpenRef.current = false;
+      triggerRef.current?.focus();
+    }
+  }, [open]);
+
+  useEffect(() => {
+    if (!open) return;
     const onKey = (event: KeyboardEvent) => { if (event.key === "Escape") setOpen(false); };
     document.addEventListener("keydown", onKey);
     return () => document.removeEventListener("keydown", onKey);
   }, [open]);
+
   return <figure className="overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.035]">
     <button ref={triggerRef} type="button" onClick={() => setOpen(true)} className={`group relative block w-full overflow-hidden ${asset.aspect === "portrait" ? "aspect-[9/14]" : "aspect-[16/10]"} focus:outline-none focus:ring-2 focus:ring-inset focus:ring-cyan-300/80`} aria-label={`Enlarge figure: ${asset.alt}`}>
       <Image src={asset.src} alt={asset.alt} fill priority={eager} sizes="(max-width: 1024px) 100vw, 900px" className="object-contain transition duration-300 group-hover:scale-[1.01]" />
       <span className="absolute bottom-3 right-3 rounded-full border border-white/20 bg-slate-950/80 px-3 py-1 text-xs font-semibold text-white">Enlarge</span>
     </button>
     <figcaption className="space-y-2 px-5 py-4 text-sm leading-7 text-slate-300"><p>{asset.caption}</p><p className="font-mono text-xs uppercase tracking-[0.16em] text-slate-500">Provenance: {asset.provenance}</p></figcaption>
-    {open ? <div role="dialog" aria-modal="true" aria-label={asset.alt} className="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/95 p-4 md:p-10" onClick={() => setOpen(false)}><div className="relative h-full w-full max-w-7xl" onClick={(event) => event.stopPropagation()}><Image src={asset.src} alt={asset.alt} fill sizes="100vw" className="object-contain" /><button type="button" onClick={() => setOpen(false)} className="absolute right-0 top-0 rounded-full border border-white/20 bg-slate-900 px-4 py-2 text-sm font-semibold text-white focus:outline-none focus:ring-2 focus:ring-cyan-300/70">Close</button></div></div> : null}
+    {open ? <div role="dialog" aria-modal="true" aria-label={asset.alt} className="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/95 p-4 md:p-10" onClick={() => setOpen(false)}><div className="relative h-full w-full max-w-7xl" onClick={(event) => event.stopPropagation()}><Image src={asset.src} alt={asset.alt} fill sizes="100vw" className="object-contain" /><button ref={closeRef} type="button" onClick={() => setOpen(false)} className="absolute right-0 top-0 rounded-full border border-white/20 bg-slate-900 px-4 py-2 text-sm font-semibold text-white focus:outline-none focus:ring-2 focus:ring-cyan-300/70">Close</button></div></div> : null}
   </figure>;
 }
 
 const workflowDescriptions: Record<string, string> = {
   "Research question": "Define the scientific question and the evidence required to answer it.",
+  "Biological preparation": "Prepare cultures and samples while preserving the state required for a meaningful measurement.",
   "Bacterial culture": "Prepare the biological material while preserving the relevant physiological state.",
   "Direct deposition on SiO₂": "Place the sample on a stable substrate for controlled measurements.",
+  "Calibration and environmental control": "Calibrate the instrument and control the measurement environment before acquisition.",
+  "AFM acquisition": "Collect topographic and force data using defined settings, regions and measurement controls.",
+  "Statistical interpretation": "Compare biological and technical variation before drawing conclusions from the measured parameters.",
+  "Scientific reporting": "Document methods, evidence and limitations so the findings can be reviewed and communicated.",
   "Cantilever and piezo calibration": "Verify the instrument response before collecting quantitative data.",
   "Controlled-humidity AFM": "Measure the system under defined environmental conditions.",
   "Topography and force spectroscopy": "Collect complementary morphology and mechanical evidence.",
@@ -116,6 +136,8 @@ const workflowDescriptions: Record<string, string> = {
   "Mechanical or device integration": "Test whether the material remains measurable after integration.",
   "Data validation": "Check physical consistency, reproducibility and fabrication-related differences.",
   "Feedback to material development": "Return interpretable evidence to guide processing or device decisions.",
+  "Material and interface selection": "Select the material and transducer configuration that can support the target and readout.",
+  "Biorecognition integration": "Integrate the recognition element and verify that it remains compatible with the sensing interface.",
   "Biosensor concept": "Define the target, recognition strategy, interface and measurable signal.",
   "Material selection": "Choose a nanomaterial whose properties support the sensing question.",
   "Dispersion and deposition": "Create a controlled material interface on the transducer.",
@@ -151,10 +173,10 @@ const workflowDescriptions: Record<string, string> = {
   "Electrical response during load": "Measure transport while the sample is mechanically deformed.",
   "Post-unloading monitoring": "Track time-dependent recovery after the load is removed.",
   "Multimodal validation": "Compare electrical, structural, thermal and morphological evidence.",
-  "Exploratory notebooks": "Use small analyses to test questions and learn the data domain.",
-  "Structured analytical workflows": "Organise data preparation, analysis and reporting into repeatable steps.",
-  "Reproducible scientific pipelines": "Automate repetitive processing while preserving traceability.",
-  "Interactive software prototypes": "Connect data entry, calculations, visualisation and user-facing output."
+  "Interactive software prototypes": "Connect data entry, calculations, visualisation and user-facing output.",
+  "Exploratory notebooks": "Use a small, focused analysis to test a question and learn the structure of the data.",
+  "Structured analytical workflows": "Organise preparation, analysis and reporting into repeatable steps.",
+  "Reproducible scientific pipelines": "Automate repetitive processing while preserving traceability and review points."
 };
 
 function normaliseProcessStep(step: string | WorkProcessStep): WorkProcessStep {
@@ -164,7 +186,7 @@ function normaliseProcessStep(step: string | WorkProcessStep): WorkProcessStep {
 
 export function ProcessFlow({ steps }: { steps: (string | WorkProcessStep)[] }) {
   return <ol className="space-y-3 border-l border-cyan-300/30 pl-5 md:grid md:space-y-0 md:border-l-0 md:pl-0 md:grid-cols-2 md:gap-4 xl:grid-cols-4">
-    {steps.map((rawStep, index) => { const step = normaliseProcessStep(rawStep); return <li key={step.title} className="relative rounded-2xl border border-cyan-300/20 bg-cyan-300/[0.06] p-4 md:min-h-[150px]">
+    {steps.map((rawStep, index) => { const step = normaliseProcessStep(rawStep); return <li key={step.title} className="relative rounded-2xl border border-cyan-300/20 bg-cyan-300/[0.06] p-4 md:min-h-[128px]">
       <span className="absolute -left-[2.05rem] top-4 grid h-6 w-6 place-items-center rounded-full border border-cyan-300/40 bg-slate-950 font-mono text-[10px] text-cyan-300 md:static md:mb-3">{String(index + 1).padStart(2, "0")}</span>
       <p className="text-sm font-semibold leading-6 text-slate-100">{step.title}</p>
       <p className="mt-2 text-sm leading-6 text-slate-400">{step.description}</p>

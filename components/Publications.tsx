@@ -7,22 +7,26 @@ export function Publications() {
     <section id="publications" className="bg-slate-950 px-5 py-20 md:px-8 md:py-28">
       <div className="mx-auto max-w-7xl">
         <SectionHeader
-          eyebrow="Publications"
-          title="Scientific publications in nanomaterials, biosensing and advanced materials research."
-          description="Peer-reviewed contributions across nanoscience, DNA-based biosensors, 2D materials, diagnostic platforms and applied characterization, reflecting sustained research activity in multidisciplinary R&D environments."
+          eyebrow="Selected publications"
+          title="Selected publications"
+          description="10+ selected publications · Complete record available on ORCID / Web of Science"
         />
-        <div className="grid gap-4">
+        <div className="mb-8 flex justify-center md:hidden">
+          <div className="rounded-2xl border border-cyan-300/25 bg-cyan-300/[0.08] px-5 py-3 text-center">
+            <p className="text-3xl font-semibold text-cyan-200">10+</p>
+            <p className="mt-1 text-xs font-bold uppercase tracking-[0.18em] text-cyan-100">Selected publications</p>
+          </div>
+        </div>
+        <div className="grid gap-3">
           {publications.map((pub) => (
-            <article key={pub.doi} className="rounded-3xl border border-white/10 bg-white/[0.035] p-6 transition hover:border-cyan-300/30">
-              <div className="flex flex-col justify-between gap-4 md:flex-row md:items-start">
+            <article key={pub.doi} className="rounded-2xl border border-white/10 bg-white/[0.035] p-4 transition hover:border-cyan-300/30 md:p-5">
+              <div className="flex flex-col justify-between gap-4 md:flex-row md:items-center">
                 <div>
-                  <div className="mb-3 flex flex-wrap gap-2">
+                  <div className="mb-2 flex flex-wrap gap-2">
                     <Badge>{pub.year}</Badge>
-                    <Badge variant="soft">{pub.theme}</Badge>
                   </div>
-                  <h3 className="text-xl font-semibold leading-8 text-white">{pub.title}</h3>
-                  <p className="mt-2 text-base text-cyan-100">{pub.journal}</p>
-                  <p className="mt-2 text-sm text-slate-400">DOI: {pub.doi}</p>
+                  <h3 className="text-base font-semibold leading-7 text-white md:text-lg">{pub.title}</h3>
+                  <p className="mt-1 text-sm text-cyan-100">{pub.journal}</p>
                 </div>
                 <a href={pub.url} target="_blank" rel="noreferrer" className="shrink-0 rounded-full border border-white/15 px-4 py-2 text-sm font-semibold text-slate-200 transition hover:border-cyan-300/50 hover:text-cyan-100">
                   Open DOI

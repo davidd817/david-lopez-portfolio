@@ -9,7 +9,7 @@ export function Expertise() {
         <SectionHeader
           eyebrow="Core expertise"
           title="Scientific and technical strengths aligned with R&D environments."
-          description="Advanced characterization, metrology, instrumentation, scientific data analysis and technical documentation."
+          description="Advanced characterisation, metrology, instrumentation, scientific data analysis and technical documentation."
         />
         <div className="grid gap-5 md:grid-cols-2">
           {strengths.map((item) => (

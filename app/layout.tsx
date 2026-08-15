@@ -7,8 +7,8 @@ import { publications, site } from "@/data/site";
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });
 const jetbrains = JetBrains_Mono({ subsets: ["latin"], variable: "--font-mono", display: "swap" });
 
-const title = "David López Diego | Materials Characterization & Scientific Data Analysis";
-const description = "Materials Characterization & Metrology Scientist in Madrid. Nanomaterials, AFM, nanoscale metrology, scientific instrumentation, Python workflows, biosensors and PhD Candidate in Materials Physics, Nanoscience and Biophysics.";
+const title = "David López Diego | Materials Characterisation & Scientific Data Analysis";
+const description = "Materials Characterisation & Metrology Scientist in Madrid. Nanomaterials, AFM, nanoscale metrology, scientific instrumentation, Python workflows, biosensors and PhD Candidate in Condensed Matter Physics, Nanoscience and Biophysics.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(`https://${site.domain}`),
@@ -16,14 +16,14 @@ export const metadata: Metadata = {
   description,
   keywords: [
     "David López Diego",
-    "Materials Characterization Scientist",
+    "Materials Characterisation Scientist",
     "Metrology Scientist",
     "Nanomaterials Scientist",
     "Scientific Data Analysis",
     "AFM",
     "Nanoscale Metrology",
     "Biosensors",
-    "PhD Candidate Materials Physics",
+    "PhD Candidate in Condensed Matter Physics, Nanoscience and Biophysics",
     "Scientific Computing",
     "Research Scientist Madrid"
   ],
@@ -56,7 +56,7 @@ function JsonLd() {
     url: `https://${site.domain}`,
     sameAs: [site.links.linkedin, site.links.orcid, site.links.webOfScience, site.links.github],
     knowsAbout: [
-      "Materials characterization",
+      "Materials characterisation",
       "Nanoscale metrology",
       "Atomic force microscopy",
       "Nanomaterials",
@@ -83,7 +83,6 @@ function JsonLd() {
     isPartOf: { "@type": "Periodical", name: pub.journal },
     identifier: pub.doi,
     url: pub.url,
-    author: { "@type": "Person", name: site.name }
   }));
 
   return (

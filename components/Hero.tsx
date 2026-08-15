@@ -17,6 +17,7 @@ export function Hero() {
             {site.role}
           </h1>
           <p className="mt-5 text-xl font-medium text-cyan-100 md:text-2xl">{site.subtitle}</p>
+          <p className="mt-3 text-sm font-semibold uppercase tracking-[0.16em] text-slate-400">{site.status}</p>
           <p className="mt-8 max-w-3xl text-pretty text-lg leading-9 text-slate-300 md:text-xl">{site.description}</p>
           <div className="mt-10 flex flex-col gap-4 sm:flex-row">
             <a href="#selected-work" className="rounded-full bg-cyan-300 px-6 py-3 text-center text-sm font-bold text-slate-950 shadow-glow transition hover:-translate-y-0.5 hover:bg-cyan-200">
@@ -48,8 +49,8 @@ export function Hero() {
               </div>
               <div className="grid gap-4">
                 {[
-                  ["Advanced measurement","Characterization · metrology · experimental validation"],
-                  ["Scientific instrumentation", "AFM · SEM-EDX · TEM · XRD · Raman · FTIR · XPS · FIB· Litography"],
+                  ["Advanced measurement","Characterisation · metrology · experimental validation"],
+                  ["Scientific instrumentation", "AFM · SEM-EDX · TEM · XRD · Raman · FTIR · XPS · FIB · Lithography"],
                   ["Data-driven R&D", "Python · reproducible workflows · reporting automation"],
                   ["Deep-tech applications", "Advanced materials · semiconductors · biosensors · nanotechnology"]
                 ].map(([title, text]) => (
@@ -63,7 +64,7 @@ export function Hero() {
           </div>
           <div className="absolute -right-6 -top-6 hidden rounded-3xl border border-cyan-300/20 bg-slate-900/90 px-5 py-4 shadow-glow backdrop-blur md:block">
             <p className="text-3xl font-semibold text-cyan-200">10+</p>
-            <p className="text-xs uppercase tracking-[0.2em] text-slate-400">Publications</p>
+            <p className="text-xs uppercase tracking-[0.2em] text-slate-400">Selected publications</p>
           </div>
         </div>
       </div>

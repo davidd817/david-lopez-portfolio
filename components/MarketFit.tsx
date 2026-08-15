@@ -9,7 +9,7 @@ export function MarketFit() {
         <SectionHeader
           eyebrow="Professional focus"
           title="Focused on R&D roles where measurement, instrumentation and data create technical value."
-          description="My strongest contribution is in environments where advanced characterization, scientific metrology and experimental data analysis support technology development, validation and reliable decision-making."
+          description="My strongest contribution is in environments where advanced characterisation, scientific metrology and experimental data analysis support technology development, validation and reliable decision-making."
         />
 
         <div className="grid gap-5 lg:grid-cols-3">

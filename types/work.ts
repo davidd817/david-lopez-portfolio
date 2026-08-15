@@ -90,6 +90,7 @@ export type WorkProject = {
   hero?: WorkAsset;
   sections: WorkSection[];
   heroLinks?: WorkLink[];
+  heroFullWidth?: boolean;
   profileLinks?: WorkLink[];
   links?: WorkLink[];
   seo: { title: string; description: string; ogDescription: string };

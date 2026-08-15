@@ -1,13 +1,14 @@
 export const site = {
   name: "David López Diego",
   shortName: "David López Diego",
-  domain: "davidlopezdiego.com",
+  domain: "davidlopezdiego.vercel.app",
   location: "Madrid, Spain",
   email: "davidlopezd8@gmail.com",
-  role: "Advanced Materials Characterization & Metrology Scientist",
-  subtitle: "Nanomaterials · Scientific Data Analysis · R&D Scientist· Semiconductors",
+  role: "Advanced Materials Characterisation & Metrology Scientist",
+  subtitle: "Nanomaterials · Scientific Data Analysis · PhD Candidate",
+  status: "PhD Candidate · UAM | Research Technician · IMN-CNM, CSIC",
   description:
-    "I combine advanced materials characterization, nanoscale metrology and Python-based scientific data workflows to support reproducible, insight-driven R&D across nanomaterials, biosensors, semiconductors and biological systems.",
+    "I combine advanced materials characterisation, nanoscale metrology and Python-based scientific data workflows to support reproducible, insight-driven R&D across nanomaterials, biosensors, semiconductors and biological systems.",
   cv: "/cv/David_Lopez_Diego_CV_Optimized_B.pdf",
   links: {
     linkedin: "https://www.linkedin.com/in/davidlopezdiego",
@@ -28,8 +29,8 @@ export const navigation = [
 
 export const metrics = [
   {
-    value: "3+",
-    label: "years in advanced characterization and scientific instrumentation",
+    value: "4+",
+    label: "years in advanced characterisation and scientific instrumentation",
     note: "AFM-based methods, microscopy, spectroscopy and nanoscale metrology in R&D environments."
   },
   {
@@ -38,24 +39,23 @@ export const metrics = [
     note: "Co-authored work in nanoscience, biosensors, DNA nanostructures and applied materials research."
   },
   {
-    value: "€800K",
-    label: "direct-cost R&D project budget supported",
+    value: "3+",
+    label: "competitive, industry-driven R&D projects successfully secured",
     note: "PERTE Chip · qNanoFoPho · Biosensor/autism-related initiatives"
   },
-{
-  value: "2+",
-  label: "years in energy-related materials characterization",
-  note: "Thermoelectric materials evaluated through electrical and thermal transport measurements using Hall, Seebeck, Specific Heat Capacity, NanoTR and PicoTR systems."
-}
+  {
+    value: "2+",
+    label: "years in energy-related materials characterisation",
+    note: "Thermoelectric materials evaluated through electrical and thermal transport measurements using Hall, Seebeck, Specific Heat Capacity, NanoTR and PicoTR systems."
+  }
 ];
-
 export const profile = {
   eyebrow: "Professional profile",
-  title: "A scientist working at the interface of advanced characterization, R&D and data-driven analysis.",
+  title: "A scientist working at the interface of advanced characterisation, R&D and data-driven analysis.",
   body: [
-    "I am a physicist and PhD candidate in Materials Physics, Nanoscience and Biophysics, with hands-on experience in advanced materials characterization, nanoscale metrology, scientific instrumentation and experimental data analysis.",
+    "I am a physicist and PhD Candidate in Condensed Matter Physics, Nanoscience and Biophysics, with hands-on experience in advanced materials characterisation, nanoscale metrology, scientific instrumentation and experimental data analysis.",
     "My work spans nanomaterials, semiconductors, biosensors, thermoelectric materials and biological systems, combining laboratory methods with Python-based workflows for reproducible processing, technical reporting and decision support in research environments.",
-    "I am especially interested in roles where scientific rigor, instrumentation, data quality and reproducible analysis matter: materials characterization, metrology, R&D, application science, scientific data analysis and interdisciplinary science-data roles."
+    "I am especially interested in roles where scientific rigor, instrumentation, data quality and reproducible analysis matter: materials characterisation, metrology, R&D, application science, scientific data analysis and interdisciplinary science-data roles."
   ],
   bridge: {
     title: "Between the laboratory and the data layer",
@@ -65,9 +65,9 @@ export const profile = {
 
 export const strengths = [
   {
-    title: "Advanced Materials Characterization",
+    title: "Advanced Materials Characterisation",
     description:
-      "AFM, SEM-EDX, TEM, XRD, Raman, FTIR, XPS, Litography, FIB, optical and fluorescence microscopy, HPLC-MS and ICP workflows across nanomaterials, semiconductors, biosensors and biological systems.",
+      "AFM, SEM-EDX, TEM, XRD, Raman, FTIR, XPS, Lithography, FIB, optical and fluorescence microscopy, HPLC-MS and ICP workflows across nanomaterials, semiconductors, biosensors and biological systems.",
     keywords: ["AFM", "SEM-EDX", "TEM", "XRD", "Raman", "FTIR", "XPS", "FIB"]
   },
   {
@@ -91,139 +91,13 @@ export const strengths = [
 ];
 
 export const targetRoles = [
-  "Materials Characterization Scientist",
+  "Materials Characterisation Scientist",
   "Metrology Scientist",
   "R&D Scientist / Research Scientist",
   "Nanomaterials Scientist",
-  "AFM / Microscopy Application Scientist",
   "Scientific Instrumentation Specialist",
-  "Scientific Data Analyst",
-  "Materials Data Analyst",
-  "Research Engineer",
-  "AI for Science / Materials Informatics — junior or hybrid roles"
+  "Scientific Data Analyst"
 ];
-
-export const selectedWork = [
-  {
-    slug: "afm-force-curve-analysis",
-    group: "Scientific computing",
-    title: "Automated AFM Biophysics Analysis",
-    subtitle: "Scientific Python workflow for reproducible biomechanical analysis of AFM force spectroscopy data.",
-    summary:
-      "A scientific computing project focused on processing AFM dats files with reproducible numerical workflows: baseline correction, contact point detection, fitting, nanomechanics models and  parameter extraction.",
-    context:
-      "AFM Biophysics analysis can become slow, inconsistent and difficult to reproduce when many data are processed manually. The objective was to standardize recurring steps and generate clean outputs for downstream scientific interpretation.",
-    role: "Scientific data workflow development, numerical analysis and reporting automation.",
-    methods: [
-      "Batch processing of force-curve files",
-      "Baseline correction and contact point detection",
-      "Contact-region fitting and parameter extraction",
-      "Automated plot generation and tabular reporting",
-      "Error handling for recurring experimental analysis"
-    ],
-    tools: ["Python", "NumPy", "Pandas", "Matplotlib", "SciPy", "Excel-ready outputs", "AFM data"],
-    impact:
-      "Improves reproducibility, reduces manual processing effort and makes AFM analysis easier to review, compare and report across experimental datasets.",
-    demonstrates:
-      "Scientific computing, experimental data processing, automation, numerical fitting, reproducible research workflows and domain-specific data interpretation.",
-    priority: "Primary"
-  },
-  {
-    slug: "materials-characterization-rd",
-    group: "R&D experience snapshot",
-    title: "Advanced Materials Characterization for Multidisciplinary R&D",
-    subtitle: "AFM-based characterization, nanoscale metrology and instrumentation support for nanomaterials, biosensors, semiconductors and biological systems.",
-    summary:
-      "Professional work at IMN-CNM, CSIC supporting multiple research teams through advanced characterization methods, instrumentation operation, protocols, datasets and technical reporting.",
-    context:
-      "R&D teams working on nanomaterials, biosensors and biological systems require reliable characterization methods, well-maintained instrumentation and clear technical outputs that can support scientific decisions and publications.",
-    role: "Research Technician and PhD candidate contributing to characterization workflows, instrumentation, reporting and research outputs.",
-    methods: [
-      "AFM-based characterization method development",
-      "Operation and calibration of AFM, SEM-EDX, TEM, FIB, XRD, Raman, FTIR and HPLC-MS systems",
-      "Translation of experimental requirements into reproducible protocols and technical reports",
-      "Support for ISO 9001-aligned workflows, SOPs and equipment logs",
-      "Training junior researchers on analytical methods and sample preparation"
-    ],
-    tools: ["AFM", "SEM-EDX", "TEM", "FIB", "XRD", "Raman", "FTIR", "HPLC-MS", "ISO 9001"],
-    impact:
-      "Supports reliable instrumentation availability, traceable experimental workflows and publication-quality research outputs in multi-institutional R&D projects.",
-    demonstrates:
-      "Advanced characterization, cross-functional R&D execution, instrumentation reliability, scientific communication and technical maturity.",
-    priority: "Primary"
-  },
-  {
-    slug: "thermoelectric-materials",
-    group: "Materials characterization",
-    title: "Thermoelectric Materials Characterization",
-    subtitle: "Electrical and thermal transport measurements for materials performance evaluation.",
-    summary:
-      "Characterization of thermoelectric materials through electrical and thermal transport measurements using Hall, Seebeck, NanoTR and PicoTR systems.",
-    context:
-      "Thermoelectric materials require careful measurement of transport properties to understand performance and support materials development decisions.",
-    role: "Experimental characterization and technical reporting support.",
-    methods: [
-      "Electrical transport measurements",
-      "Thermal transport measurements",
-      "Hall and Seebeck characterization",
-      "NanoTR and PicoTR measurement workflows",
-      "Data interpretation and reporting for R&D contexts"
-    ],
-    tools: ["Hall", "Seebeck", "NanoTR", "PicoTR", "Materials characterization", "Technical reporting"],
-    impact:
-      "Enables materials performance evaluation and supports R&D teams with reliable measurement workflows and interpretable outputs.",
-    demonstrates:
-      "Materials physics, measurement discipline, experimental data quality and applied characterization know-how.",
-    priority: "Primary"
-  },
-  {
-    slug: "mixed-matrix-membranes",
-    group: "Early research experience",
-    title: "Mixed-Matrix Membranes for Gas-Separation Applications",
-    subtitle: "Synthesis and characterization of polymer formulations for CO₂ and greenhouse-gas capture use cases.",
-    summary:
-      "Research work at the SMAP Group involving the synthesis and characterization of 10+ mixed-matrix membrane and polymer formulations.",
-    context:
-      "Gas-separation materials require balancing permeability, selectivity and performance trade-offs for CO₂ and greenhouse-gas capture applications.",
-    role: "Research Assistant in Materials Physics supporting synthesis, characterization and lab operations.",
-    methods: [
-      "Synthesis of mixed-matrix membrane and polymer formulations",
-      "Materials characterization and performance evaluation",
-      "Optimization of permeability/selectivity trade-offs",
-      "Laboratory operations, instrument maintenance and safety protocols"
-    ],
-    tools: ["Materials synthesis", "Polymer formulations", "Gas separation", "CO₂ capture", "Lab operations"],
-    impact:
-      "Built a foundation in applied materials research, experimental discipline and laboratory execution in a high-volume research environment.",
-    demonstrates:
-      "Materials research fundamentals, experimental design, characterization and lab reliability.",
-    priority: "Primary"
-  },
-  {
-    slug: "analytics-training-projects",
-    group: "Complementary analytics training",
-    title: "Applied Data Analytics Training Projects",
-    subtitle: "Python, SQL and machine-learning practice projects used to broaden analytical capabilities beyond the laboratory.",
-    summary:
-      "A set of complementary analytics projects covering economic risk modelling, SQL-based sales analysis and market-basket association rules. These are positioned as training and portfolio exercises, not as the core professional identity.",
-    context:
-      "The goal was to expand computational fluency across Python, SQL, machine learning and business-oriented analysis while keeping the main professional focus on scientific and R&D data.",
-    role: "Independent learning and applied analytics practice.",
-    methods: [
-      "Economic early-warning modelling using state-level indicators",
-      "SQL/data warehouse practice for sales and customer analysis",
-      "Market-basket analysis with association rules",
-      "Model evaluation, visualisation and reporting"
-    ],
-    tools: ["Python", "TensorFlow", "Scikit-learn", "SQL", "Power BI", "Machine learning", "Association rules"],
-    impact:
-      "Demonstrates learning agility, analytical breadth and the ability to transfer scientific reasoning into broader data contexts without overstating professional specialization.",
-    demonstrates:
-      "Python analytics, SQL fundamentals, model evaluation, structured reporting and continuous upskilling.",
-    priority: "Secondary"
-  }
-];
-
 export const experience = [
   {
     role: "Research Technician",
@@ -231,7 +105,7 @@ export const experience = [
     location: "Madrid, Spain",
     period: "Feb 2022 – Present",
     highlights: [
-      "Develop advanced AFM-based characterization methods for nanomaterials, semiconductors, biosensors and biological systems.",
+      "Develop advanced AFM-based characterisation methods for nanomaterials, semiconductors, biosensors and biological systems.",
       "Operate, calibrate and maintain advanced instrumentation including AFM, SEM-EDX, TEM, FIB lithography, XRD, HPLC-MS, Raman and FTIR.",
       "Translate experimental requirements into reproducible protocols, datasets and technical reports for multidisciplinary R&D projects.",
       "Contribute to national, international and industry-linked projects, including qNanoFoPho, a 3-year AFM-confocal nanoscale metrology project with a €200K direct-cost budget.",
@@ -258,7 +132,7 @@ export const education = [
     degree: "PhD Candidate in Condensed Matter Physics, Nanoscience and Biophysics",
     institution: "Autonomous University of Madrid",
     period: "Expected: 2027",
-    detail: "Current doctoral work aligned with materials physics, nanoscience, nanoscale characterization and biophysics."
+    detail: "Current doctoral work aligned with materials physics, nanoscience, nanoscale characterisation and biophysics."
   },
   {
     degree: "Master's Degree in Physics, Materials Physics",
@@ -276,7 +150,7 @@ export const education = [
 
 export const skills = [
   {
-    category: "Materials Characterization",
+    category: "Materials Characterisation",
     items: ["AFM", "SEM-EDX", "TEM", "XRD", "Raman", "FTIR", "XPS", "FIB lithography", "Optical microscopy", "Fluorescence microscopy", "HPLC-MS", "ICP"]
   },
   {
@@ -298,13 +172,21 @@ export const skills = [
 ];
 
 export const certifications = [
-  "Data Manipulation in Python, Data Science, Python for Machine Learning and Generative AI — Harvard University / Coursera, 2025",
-  "Financial Modeling for Data Scientists; Data Analysis and Big Data / AI Through Visualization — Coursera / Columbia University, 2025",
-  "Data Science and Data Analysis with R / SQL for Data Analysis and SQL Database Design — Coursera, 2025 / Udemy, 2024",
-  "Computational Physics: Mathematica, C++ and NI LabVIEW — University of Valladolid, 2021"
+  "Data Manipulation in Python, Data Science, Python for Machine Learning and Generative AI · Harvard University / Coursera, 2025",
+  "Financial Modeling for Data Scientists; Data Analysis and Big Data / AI Through Visualization · Coursera / Columbia University, 2025",
+  "Data Science and Data Analysis with R / SQL for Data Analysis and SQL Database Design · Coursera, 2025 / Udemy, 2024",
+  "Computational Physics: Mathematica, C++ and NI LabVIEW · University of Valladolid, 2021"
 ];
 
 export const publications = [
+  {
+    title: "Amplification-Free Attomolar Sensing of Autism Biomarkers with MINT-DNA Dendrimer Hybrids",
+    journal: "Nanoscale",
+    year: "2026",
+    theme: "DNA dendrimers · Autism biomarkers",
+    doi: "10.1039/D6NR02395A",
+    url: "https://doi.org/10.1039/D6NR02395A"
+  },
    {
     title: "Covalent organic polymer-based biosensor for autism spectrum disorder biomarker detection",
     journal: "Microchimica Acta",
@@ -381,9 +263,9 @@ export const publications = [
 
 export const marketPositioning = [
   {
-    title: "Advanced characterization and metrology",
+    title: "Advanced characterisation and metrology",
     text:
-      "Core positioning in materials characterization, nanoscale metrology and scientific instrumentation, supporting R&D teams that need reliable measurements, validated workflows and interpretable experimental results."
+      "Core positioning in materials characterisation, nanoscale metrology and scientific instrumentation, supporting R&D teams that need reliable measurements, validated workflows and interpretable experimental results."
   },
   {
     title: "Data-driven experimental R&D",

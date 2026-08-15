@@ -19,9 +19,9 @@ export function Skills() {
             </article>
           ))}
         </div>
-        <div className="mt-8 rounded-[2rem] border border-cyan-300/20 bg-cyan-300/[0.06] p-7 md:p-9">
+        <div className="mt-8 rounded-[2rem] border border-cyan-300/20 bg-cyan-300/[0.06] p-5 md:p-6">
           <h3 className="text-2xl font-semibold text-white">Complementary training</h3>
-          <ul className="mt-5 grid gap-3 text-base leading-7 text-slate-300 md:grid-cols-2">
+          <ul className="mt-4 grid gap-2 text-sm leading-6 text-slate-300 md:grid-cols-2">
             {certifications.map((item) => (
               <li key={item} className="flex gap-3">
                 <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-cyan-300" />

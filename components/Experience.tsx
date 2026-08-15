@@ -8,7 +8,7 @@ export function Experience() {
         <SectionHeader
           eyebrow="Experience"
           title="R&D experience, scientific instrumentation and technical execution."
-          description="Experience supporting multidisciplinary R&D through advanced characterization, nanoscale metrology, instrument operation, technical documentation, quality-aligned workflows and reproducible experimental data analysis."
+          description="Experience supporting multidisciplinary R&D through advanced characterisation, nanoscale metrology, instrument operation, technical documentation, quality-aligned workflows and reproducible experimental data analysis."
         />
         <div className="grid gap-6 lg:grid-cols-[1.15fr_0.85fr]">
           <div className="space-y-5">
@@ -46,7 +46,7 @@ export function Experience() {
             <div className="rounded-[2rem] border border-white/10 bg-slate-950/70 p-7 md:p-9">
               <h3 className="text-2xl font-semibold text-white">Professional focus</h3>
               <p className="mt-4 text-base leading-8 text-slate-300">
-                I help R&D teams transform complex measurements into reliable, traceable and actionable insights through advanced characterization, scientific instrumentation and data-driven analysis.
+                I help R&D teams transform complex measurements into reliable, traceable and actionable insights through advanced characterisation, scientific instrumentation and data-driven analysis.
               </p>
             </div>
           </aside>
