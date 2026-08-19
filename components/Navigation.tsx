@@ -44,10 +44,9 @@ export function Navigation() {
         </a>
       </nav>
 
-      <div className="border-t border-white/10 lg:hidden">
+      <nav className="border-t border-white/10 lg:hidden" aria-label="Mobile navigation">
         <div
           className="mx-auto flex max-w-7xl gap-3 overflow-x-auto px-5 py-3 md:px-8"
-          aria-label="Mobile navigation"
         >
           {navigation.map((item) => (
             <a
@@ -59,7 +58,7 @@ export function Navigation() {
             </a>
           ))}
         </div>
-      </div>
+      </nav>
     </header>
   );
 }

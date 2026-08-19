@@ -31,10 +31,10 @@ export function Hero() {
             </a>
           </div>
           <div className="mt-9 flex flex-wrap gap-x-6 gap-y-3 text-sm text-slate-400">
-            <a className="hover:text-cyan-200" href={site.links.linkedin} target="_blank" rel="noreferrer">LinkedIn</a>
-            <a className="hover:text-cyan-200" href={site.links.orcid} target="_blank" rel="noreferrer">ORCID</a>
-            <a className="hover:text-cyan-200" href={site.links.webOfScience} target="_blank" rel="noreferrer">Web of Science</a>
-            <a className="hover:text-cyan-200" href={site.links.github} target="_blank" rel="noreferrer">GitHub</a>
+            <a className="hover:text-cyan-200" href={site.links.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a className="hover:text-cyan-200" href={site.links.orcid} target="_blank" rel="noopener noreferrer">ORCID</a>
+            <a className="hover:text-cyan-200" href={site.links.webOfScience} target="_blank" rel="noopener noreferrer">Web of Science</a>
+            <a className="hover:text-cyan-200" href={site.links.github} target="_blank" rel="noopener noreferrer">GitHub</a>
           </div>
         </div>
         <div className="relative mx-auto w-full max-w-lg lg:max-w-none">
@@ -45,7 +45,7 @@ export function Hero() {
                   <p className="text-xs uppercase tracking-[0.28em] text-cyan-300">Scientific interface</p>
                   <p className="mt-2 text-lg font-semibold text-white">Instrumentation → Data → Insight</p>
                 </div>
-                <div className="h-12 w-12 rounded-2xl border border-emerald-300/30 bg-emerald-300/10" />
+                <div aria-hidden="true" className="h-12 w-12 rounded-2xl border border-emerald-300/30 bg-emerald-300/10" />
               </div>
               <div className="grid gap-4">
                 {[

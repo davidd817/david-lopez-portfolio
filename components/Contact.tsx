@@ -13,7 +13,7 @@ export function Contact() {
           <a href={`mailto:${site.email}`} className="rounded-full bg-cyan-300 px-6 py-3 text-sm font-bold text-slate-950 shadow-glow transition hover:bg-cyan-200">
             Email David
           </a>
-          <a href={site.links.linkedin} target="_blank" rel="noreferrer" className="rounded-full border border-white/15 px-6 py-3 text-sm font-bold text-white transition hover:border-cyan-300/50">
+          <a href={site.links.linkedin} target="_blank" rel="noopener noreferrer" className="rounded-full border border-white/15 px-6 py-3 text-sm font-bold text-white transition hover:border-cyan-300/50">
             LinkedIn
           </a>
           <a href={site.cv} className="rounded-full border border-white/15 px-6 py-3 text-sm font-bold text-white transition hover:border-cyan-300/50">

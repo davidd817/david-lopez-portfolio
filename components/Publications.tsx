@@ -28,7 +28,7 @@ export function Publications() {
                   <h3 className="text-base font-semibold leading-7 text-white md:text-lg">{pub.title}</h3>
                   <p className="mt-1 text-sm text-cyan-100">{pub.journal}</p>
                 </div>
-                <a href={pub.url} target="_blank" rel="noreferrer" className="shrink-0 rounded-full border border-white/15 px-4 py-2 text-sm font-semibold text-slate-200 transition hover:border-cyan-300/50 hover:text-cyan-100">
+                <a href={pub.url} target="_blank" rel="noopener noreferrer" className="shrink-0 rounded-full border border-white/15 px-4 py-2 text-sm font-semibold text-slate-200 transition hover:border-cyan-300/50 hover:text-cyan-100">
                   Open DOI
                 </a>
               </div>
@@ -36,8 +36,8 @@ export function Publications() {
           ))}
         </div>
         <div className="mt-8 flex flex-wrap justify-center gap-3">
-          <a href={site.links.orcid} target="_blank" rel="noreferrer" className="rounded-full bg-cyan-300 px-5 py-3 text-sm font-bold text-slate-950 transition hover:bg-cyan-200">View ORCID</a>
-          <a href={site.links.webOfScience} target="_blank" rel="noreferrer" className="rounded-full border border-white/15 px-5 py-3 text-sm font-bold text-white transition hover:border-cyan-300/50">Web of Science</a>
+          <a href={site.links.orcid} target="_blank" rel="noopener noreferrer" className="rounded-full bg-cyan-300 px-5 py-3 text-sm font-bold text-slate-950 transition hover:bg-cyan-200">View ORCID</a>
+          <a href={site.links.webOfScience} target="_blank" rel="noopener noreferrer" className="rounded-full border border-white/15 px-5 py-3 text-sm font-bold text-white transition hover:border-cyan-300/50">Web of Science</a>
         </div>
       </div>
     </section>

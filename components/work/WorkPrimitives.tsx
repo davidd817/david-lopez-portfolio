@@ -46,14 +46,18 @@ export function ProjectSnapshot({ items }: { items: { label: string; value: stri
 
 export function CaseStudyNav({ items }: { items: { id: string; label: string }[] }) {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const triggerRef = useRef<HTMLButtonElement>(null);
+  const closeRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
     if (!mobileOpen) return;
+    const frame = window.requestAnimationFrame(() => closeRef.current?.focus());
+    const trigger = triggerRef.current;
     const onKeyDown = (event: KeyboardEvent) => { if (event.key === "Escape") setMobileOpen(false); };
     const previousOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
     document.addEventListener("keydown", onKeyDown);
-    return () => { document.body.style.overflow = previousOverflow; document.removeEventListener("keydown", onKeyDown); };
+    return () => { window.cancelAnimationFrame(frame); document.body.style.overflow = previousOverflow; document.removeEventListener("keydown", onKeyDown); trigger?.focus(); };
   }, [mobileOpen]);
 
   return <>
@@ -64,12 +68,12 @@ export function CaseStudyNav({ items }: { items: { id: string; label: string }[]
       </div>
     </nav>
     <div className="fixed bottom-4 left-4 right-4 z-40 lg:hidden">
-      <button type="button" aria-expanded={mobileOpen} aria-controls="mobile-project-sections" onClick={() => setMobileOpen(true)} className="flex w-full items-center justify-between rounded-full border border-cyan-300/40 bg-slate-900 px-5 py-3 text-sm font-bold text-cyan-100 shadow-2xl shadow-slate-950/50 focus:outline-none focus:ring-2 focus:ring-cyan-300/80"><span>Sections</span><span aria-hidden="true" className="text-cyan-300">↑</span></button>
+      <button ref={triggerRef} type="button" aria-expanded={mobileOpen} aria-controls="mobile-project-sections" aria-haspopup="dialog" onClick={() => setMobileOpen(true)} className="flex w-full items-center justify-between rounded-full border border-cyan-300/40 bg-slate-900 px-5 py-3 text-sm font-bold text-cyan-100 shadow-2xl shadow-slate-950/50 focus:outline-none focus:ring-2 focus:ring-cyan-300/80"><span>Sections</span><span aria-hidden="true" className="text-cyan-300">↑</span></button>
     </div>
     {mobileOpen ? <div className="fixed inset-0 z-50 lg:hidden" role="presentation">
       <button type="button" aria-label="Close sections" onClick={() => setMobileOpen(false)} className="absolute inset-0 bg-slate-950/80" />
       <section id="mobile-project-sections" role="dialog" aria-modal="true" aria-labelledby="mobile-project-sections-title" className="absolute bottom-0 left-0 right-0 max-h-[82vh] overflow-y-auto rounded-t-[2rem] border border-white/10 bg-slate-900 p-6 shadow-2xl">
-        <div className="flex items-start justify-between gap-4"><div><p className="text-[11px] font-bold uppercase tracking-[0.22em] text-cyan-300">On this project</p><h2 id="mobile-project-sections-title" className="mt-2 text-2xl font-semibold text-white">Sections</h2></div><button type="button" onClick={() => setMobileOpen(false)} className="rounded-full border border-white/15 px-4 py-2 text-sm font-semibold text-slate-200 focus:outline-none focus:ring-2 focus:ring-cyan-300/70">Close</button></div>
+        <div className="flex items-start justify-between gap-4"><div><p className="text-[11px] font-bold uppercase tracking-[0.22em] text-cyan-300">On this project</p><h2 id="mobile-project-sections-title" className="mt-2 text-2xl font-semibold text-white">Sections</h2></div><button ref={closeRef} type="button" onClick={() => setMobileOpen(false)} className="rounded-full border border-white/15 px-4 py-2 text-sm font-semibold text-slate-200 focus:outline-none focus:ring-2 focus:ring-cyan-300/70">Close</button></div>
         <div className="mt-5 grid gap-2">{items.map((item) => <a key={item.id} href={`#${item.id}`} onClick={() => setMobileOpen(false)} className="rounded-2xl border border-white/10 bg-white/[0.035] px-4 py-3 text-sm font-semibold text-slate-200 transition hover:border-cyan-300/40 hover:text-white focus:outline-none focus:ring-2 focus:ring-cyan-300/70">{item.label}</a>)}</div>
       </section>
     </div> : null}
@@ -212,7 +216,7 @@ export function PublicationTimeline({ publications }: { publications: WorkPublic
   return <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">{publications.map((publication) => <article key={publication.doi} className="flex h-full flex-col rounded-3xl border border-white/10 bg-white/[0.035] p-5 transition hover:border-cyan-300/30">
     <div className="flex items-center justify-between gap-3"><Badge>{publication.year}</Badge><span className="text-xs text-slate-500">{publication.journal}</span></div>
     <h3 className="mt-4 text-base font-semibold leading-7 text-white">{publication.title}</h3>
-    <div className="mt-auto pt-5"><a href={publication.url} target="_blank" rel="noreferrer" className="inline-flex rounded-full border border-white/15 px-4 py-2 text-sm font-semibold text-slate-200 transition hover:border-cyan-300/50 hover:text-cyan-100 focus:outline-none focus:ring-2 focus:ring-cyan-300/70">Open DOI</a></div>
+    <div className="mt-auto pt-5"><a href={publication.url} target="_blank" rel="noopener noreferrer" className="inline-flex rounded-full border border-white/15 px-4 py-2 text-sm font-semibold text-slate-200 transition hover:border-cyan-300/50 hover:text-cyan-100 focus:outline-none focus:ring-2 focus:ring-cyan-300/70">Open DOI</a></div>
   </article>)}</div>;
 }
 
@@ -220,4 +224,4 @@ export function ScreenshotGallery({ assets }: { assets: WorkAsset[] }) { return 
 
 export function DisclosureNote({ children }: { children: string }) { return <aside className="rounded-3xl border border-amber-200/20 bg-amber-200/[0.05] p-6 text-sm leading-7 text-amber-50"><p className="font-semibold text-amber-200">Research status and public note</p><p className="mt-2">{children}</p></aside>; }
 
-export function ExternalLinkGroup({ links }: { links?: WorkLink[] }) { if (!links?.length) return null; return <div className="flex flex-wrap gap-3">{links.map((link) => link.external ? <a key={link.href} href={link.href} target="_blank" rel="noreferrer" className="rounded-full bg-cyan-300 px-5 py-3 text-sm font-bold text-slate-950 transition hover:bg-cyan-200 focus:outline-none focus:ring-2 focus:ring-cyan-300/70">{link.label}</a> : <Link key={link.href} href={link.href} className="rounded-full border border-white/15 px-5 py-3 text-sm font-bold text-white transition hover:border-cyan-300/50 focus:outline-none focus:ring-2 focus:ring-cyan-300/70">{link.label}</Link>)}</div>; }
+export function ExternalLinkGroup({ links }: { links?: WorkLink[] }) { if (!links?.length) return null; return <div className="flex flex-wrap gap-3">{links.map((link) => link.external ? <a key={link.href} href={link.href} target="_blank" rel="noopener noreferrer" className="rounded-full bg-cyan-300 px-5 py-3 text-sm font-bold text-slate-950 transition hover:bg-cyan-200 focus:outline-none focus:ring-2 focus:ring-cyan-300/70">{link.label}</a> : <Link key={link.href} href={link.href} className="rounded-full border border-white/15 px-5 py-3 text-sm font-bold text-white transition hover:border-cyan-300/50 focus:outline-none focus:ring-2 focus:ring-cyan-300/70">{link.label}</Link>)}</div>; }
