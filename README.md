@@ -44,7 +44,7 @@ Do not add or rewrite professional, scientific or publication claims without sou
 
 ## CV and assets
 
-The public CV is `public/cv/David_Lopez_Diego_CV_Optimized_B.pdf`. Existing CV links depend on that path; replace the file at the same path when updating it.
+The public CV is `public/cv/David_Lopez_Diego_CV.pdf`. Existing CV links depend on that path; replace the file at the same path when updating it.
 
 Project figures are stored under `public/images/work/` and referenced by typed asset records in `data/work/`. Keep meaningful English alternative text, captions and provenance for new figures. Verify local paths before opening a pull request.
 

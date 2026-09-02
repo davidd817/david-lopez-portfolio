@@ -61,7 +61,7 @@ Add a new object inside `publications`:
 Replace:
 
 ```txt
-public/cv/David_Lopez_Diego_CV_Optimized_B.pdf
+public/cv/David_Lopez_Diego_CV.pdf
 ```
 
 with a new file using the same filename.

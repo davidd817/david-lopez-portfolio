@@ -9,7 +9,7 @@ export const site = {
   status: "PhD Candidate · UAM | Research Technician · IMN-CNM, CSIC",
   description:
     "I combine advanced materials characterisation, nanoscale metrology and Python-based scientific data workflows to support reproducible, insight-driven R&D across nanomaterials, biosensors, semiconductors and biological systems.",
-  cv: "/cv/David_Lopez_Diego_CV_Optimized_B.pdf",
+  cv: "/cv/David_Lopez_Diego_CV.pdf",
   links: {
     linkedin: "https://www.linkedin.com/in/davidlopezdiego",
     github: "https://github.com/davidd817",
