@@ -12,7 +12,7 @@ The strongest positioning is scientific-technical:
 
 ### Before
 
-- Data analyst / research scientist hybrid.
+- Data analyst / materials scientist hybrid.
 - Generic portfolio projects were highly visible.
 - Project links led to Google Sites.
 - Scientific experience and publications were present but not central enough.

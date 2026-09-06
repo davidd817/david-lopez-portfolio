@@ -5,10 +5,10 @@ export const site = {
   location: "Madrid, Spain",
   email: "davidlopezd8@gmail.com",
   role: "Advanced Materials Characterisation & Metrology Scientist",
-  subtitle: "Nanomaterials · Scientific Data Analysis · PhD Candidate",
-  status: "PhD Candidate · UAM | Research Technician · IMN-CNM, CSIC",
+  subtitle: "Nanomaterials · Scientific Data Analysis · Applied R&D",
+  status: "Materials Scientist · IMN-CNM, CSIC | PhD Candidate · UAM",
   description:
-    "I combine advanced materials characterisation, nanoscale metrology and Python-based scientific data workflows to support reproducible, insight-driven R&D across nanomaterials, biosensors, semiconductors and biological systems.",
+    "I combine advanced materials characterisation, nanoscale metrology and data-analysis workflows to support reproducible, insight-driven R&D across nanomaterials, biosensors, semiconductors and biological systems.",
   cv: "/cv/David_Lopez_Diego_CV.pdf",
   links: {
     linkedin: "https://www.linkedin.com/in/davidlopezdiego",
@@ -30,8 +30,8 @@ export const navigation = [
 export const metrics = [
   {
     value: "4+",
-    label: "years in advanced characterisation and scientific instrumentation",
-    note: "AFM-based methods, microscopy, spectroscopy and nanoscale metrology in R&D environments."
+    label: "years across materials characterisation, scientific instrumentation and applied R&D",
+    note: "Hands-on experience in microscopy, spectroscopy, nanoscale metrology and experimental method development."
   },
   {
     value: "10+",
@@ -51,15 +51,15 @@ export const metrics = [
 ];
 export const profile = {
   eyebrow: "Professional profile",
-  title: "A scientist working at the interface of advanced characterisation, R&D and data-driven analysis.",
+  title: "Connecting materials, advanced instrumentation and data to solve complex R&D challenges.",
   body: [
-    "I am a physicist and PhD Candidate in Condensed Matter Physics, Nanoscience and Biophysics, with hands-on experience in advanced materials characterisation, nanoscale metrology, scientific instrumentation and experimental data analysis.",
+    "I am a physicist and PhD candidate in Condensed Matter Physics, Nanoscience and Biophysics, with 4+ years of experience in advanced materials characterisation, nanoscale metrology, scientific instrumentation and experimental data analysis.",
     "My work spans nanomaterials, semiconductors, biosensors, thermoelectric materials and biological systems, combining laboratory methods with Python-based workflows for reproducible processing, technical reporting and decision support in research environments.",
     "I am especially interested in roles where scientific rigor, instrumentation, data quality and reproducible analysis matter: materials characterisation, metrology, R&D, application science, scientific data analysis and interdisciplinary science-data roles."
   ],
   bridge: {
-    title: "Between the laboratory and the data layer",
-    text: "I operate advanced scientific instrumentation, generate complex experimental datasets, and build reproducible workflows to make results easier to analyze, report and use."
+    title: "From laboratory measurements to technical decisions",
+    text: "I combine hands-on experimentation, instrument knowledge and scientific computing to deliver reproducible data that multidisciplinary teams can understand, trust and use."
   }
 };
 
@@ -93,14 +93,14 @@ export const strengths = [
 export const targetRoles = [
   "Materials Characterisation Scientist",
   "Metrology Scientist",
-  "R&D Scientist / Research Scientist",
+  "R&D Scientist / Materials Scientist ",
   "Nanomaterials Scientist",
   "Scientific Instrumentation Specialist",
   "Scientific Data Analyst"
 ];
 export const experience = [
   {
-    role: "Research Technician",
+    role: "Materials Scientist",
     organization: "Institute of Micro and Nanotechnology, IMN-CNM, CSIC",
     location: "Madrid, Spain",
     period: "Feb 2022 – Present",

@@ -4,7 +4,7 @@
 
 - Materials Characterization Scientist
 - Metrology Scientist
-- R&D Scientist / Research Scientist
+- R&D Scientist / Materials Scientist
 - Nanomaterials Scientist
 - Application Scientist — AFM, microscopy, surface characterization
 - Scientific Instrumentation Specialist

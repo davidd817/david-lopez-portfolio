@@ -13,7 +13,7 @@ export const sw01: WorkProject = {
   cardDescription: "An end-to-end AFM study connecting viable bacterial samples, controlled humidity, force spectroscopy and Python analysis to reproducible evidence about morphology, mechanics and environmental response.",
   proofPoints: ["Four bacterial strains", "Approximately 2–85% relative humidity", "Calibrated force spectroscopy", "Selected quantitative findings"],
   technologies: ["AFM", "Force spectroscopy", "Controlled humidity", "Python", "KPFM", "SEM-assisted calibration"],
-  status: "Ongoing doctoral research · Manuscript in preparation", cta: "Explore the case study",
+  status: "Ongoing doctoral research ", cta: "Explore the case study",
   subheadline: "How hydration and physiological state reshape bacterial cell-envelope mechanics",
   opening: ["Bacterial survival under environmental stress depends not only on biochemical regulation, but also on the physical behaviour of the cell envelope.", "In this doctoral research project, I developed an end-to-end Atomic Force Microscopy workflow to investigate how hydration, growth state and cell-envelope organisation influence bacterial morphology, effective stiffness, deformation and resistance to mechanical failure."],
   snapshot: [
